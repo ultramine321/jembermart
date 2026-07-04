@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jember Mart - Berau</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* BANNER BERITA */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .banner-berita {
+            margin-bottom: 40px;
+        }
+
+        .banner-kiri {
+            background: #f6a000;
+            padding: 0;
+        }
+
+        .banner-content {
+            display: flex;
+            align-items: stretch;
+            min-height: 220px;
+        }
+
+        .banner-text {
+            width: 50%;
+            padding: 25px 20px;
+            color: white;
+        }
+
+        .banner-text h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .banner-text hr {
+            width: 90px;
+            border: none;
+            border-top: 2px solid white;
+        }
+
+        .banner-gambar {
+            width: 65%;
+        }
+
+        .banner-gambar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* BERITA */
+        .galeri-slider {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .galeri-track {
+            display: flex;
+            gap: 20px;
+            width: max-content;
+            animation: scrollGaleri 20s linear infinite;
+        }
+
+        .galeri-track img {
+            width: 350px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+            flex-shrink: 0;
+        }
+
+        @keyframes scrollGaleri {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Pause saat cursor di atas gambar */
+        .galeri-track:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- HEADER -->
+        <header class="header-cover">
+
+            <div class="cover-kuning"></div>
+
+            <div class="profil-header">
+
+                <div class="logo-box">
+                    <img src="Asset/OIP (1) 1-2.png" alt="Logo Jember Mart">
+                </div>
+
+                <div class="info-header">
+                    <h1>Jember Mart</h1>
+                    <p>Sahabat belanja keluarga anda · Berau</p>
+                </div>
+
+            </div>
+
+        </header>
+
+        <nav class="navbar">
+            <a href="homepage.html" class="nav-link active">Home</a>
+
+            <div class="dropdown">
+                <a href="profilJM.html" class="nav-link">
+                    Profil JM ▼
+                </a>
+
+                <div class="dropdown-content">
+                    <a href="profilJM.html#tentang">Tentang Jember Mart</a>
+                    <a href="sejarah.html">Sejarah Jember Mart</a>
+                </div>
+            </div>
+
+            <a href="promosi.html" class="nav-link">Promosi</a>
+            <a href="berita.html" class="nav-link">Berita</a>
+
+            <div class="dropdown">
+                <a href="#" class="nav-link">
+                    Layanan ▼
+                </a>
+
+                <div class="dropdown-content">
+                    <a href="pengajuan_produk.html">
+                        Pengajuan Produk
+                    </a>
+
+                    <a href="verifikasi_produk.html">
+                        Verifikasi Produk
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+
+        <section class="banner-berita">
+
+            <div class="banner-kiri">
+
+                <div class="banner-content">
+
+                    <div class="banner-text">
+                        <h2>Berita</h2>
+                        <hr>
+                    </div>
+
+                    <div class="banner-gambar">
+                        <img src="Asset/image 11-1.png" alt="Berita">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="galeri-slider">
+
+            <div class="galeri-track">
+
+                <img src="Asset/img1.png" alt="">
+                <img src="Asset/image 10-1.png" alt="">
+                <img src="Asset/image20.png" alt="">
+
+                <!-- Duplikat agar scroll tidak putus -->
+                <img src="Asset/img1.png" alt="">
+                <img src="Asset/image 10-1.png" alt="">
+                <img src="Asset/image20.png" alt="">
+            </div>
+
+        </div>
+
+        <div class="galeri-slider">
+
+            <div class="galeri-track">
+
+                <img src="Asset/img1.png" alt="">
+                <img src="Asset/image 10-1.png" alt="">
+                <img src="Asset/image20.png" alt="">
+
+                <!-- Duplikat agar scroll tidak putus -->
+                <img src="Asset/img1.png" alt="">
+                <img src="Asset/image 10-1.png" alt="">
+                <img src="Asset/image20.png" alt="">
+            </div>
+        </div>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <!-- BAGIAN ATAS -->
+        <div class="footer-main">
+
+            <div class="footer-header">
+
+                <img src="Asset/OIP (1) 1-2.png" alt="Logo">
+
+                <div>
+                    <h2>CV JEMBER MART</h2>
+
+                    <p>
+                        Jl. Marsma Iswahyudi No.47,
+                        Rinding, Teluk Bayur,
+                        East Kalimantan
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="footer-content">
+
+                <div class="footer-section">
+
+                    <h3>Kantor Pusat</h3>
+
+                    <p>
+                        Jl. M.Iswahyudi Gg. Elang No.28B<br>
+                        Rinding - Teluk Bayur
+                    </p>
+
+                    <p class="copyright">
+                        Copyright © 2021 - 2026 Jember Mart.<br>
+                        All right reserved
+                    </p>
+
+                </div>
+
+                <div class="footer-section">
+
+                    <h3>Hubungi Kami</h3>
+
+                    <div class="kontak-item">
+                        <span>📞</span>
+                        <div>
+                            <small>Layanan Pelanggan</small>
+                            <strong>1500 169</strong>
+                        </div>
+                    </div>
+
+                    <div class="kontak-item">
+                        <span>💬</span>
+                        <div>
+                            <small>Whatsapp</small>
+                            <strong>0811 5868 800</strong>
+                        </div>
+                    </div>
+
+                    <div class="kontak-item">
+                        <span>✉</span>
+                        <div>
+                            <small>Email</small>
+                            <strong>office@jembermart.co.id</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- BAGIAN BAWAH -->
+        <div class="footer-social">
+
+            <h3>Media Sosial</h3>
+
+            <div class="social-grid">
+
+                <div class="social-item">
+                    <span>📘</span>
+                    <p>jembermartberau</p>
+                </div>
+
+                <div class="social-item">
+                    <span>📷</span>
+                    <p>jembermartberau</p>
+                </div>
+
+                <div class="social-item">
+                    <span>🎵</span>
+                    <p>@jember.mart.berau</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+    </div>
+</body>
+
+</html>

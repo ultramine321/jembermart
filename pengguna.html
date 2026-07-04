@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detail Pengajuan Vendor</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI,sans-serif;
+}
+
+body{
+    background:#f5f0e8;
+}
+
+.container{
+    max-width:1000px;
+    margin:30px auto;
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 3px 12px rgba(0,0,0,.1);
+}
+
+/* HEADER */
+.detail-header{
+    background:#4a3d3d;
+    padding:20px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.header-left{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.back-btn{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:rgba(255,255,255,.15);
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-size:22px;
+}
+
+.title-area h2{
+    color:#fff;
+    font-size:24px;
+}
+
+.title-area p{
+    color:#d7d7d7;
+    font-size:13px;
+}
+
+.status-badge{
+    background:#fff3d4;
+    color:#d89000;
+    padding:7px 15px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+}
+
+/* STEPPER */
+.stepper{
+    background:#4a3d3d;
+    padding:0 30px 20px;
+    display:flex;
+    align-items:center;
+}
+
+.step{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.step span{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background:#6f6363;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:13px;
+}
+
+.step.active span{
+    background:#f0a318;
+}
+
+.step p{
+    color:#ddd;
+    font-size:14px;
+}
+
+.step.active p{
+    color:#f0a318;
+}
+
+.line{
+    flex:1;
+    height:2px;
+    background:#6f6363;
+    margin:0 10px;
+}
+
+/* CONTENT */
+.content{
+    padding:30px;
+}
+
+.section-title{
+    font-size:14px;
+    color:#888;
+    margin-bottom:20px;
+    font-weight:600;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    margin-bottom:8px;
+    color:#666;
+    font-size:14px;
+}
+
+.form-group label span{
+    color:#f0a318;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+    width:100%;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:14px;
+    font-size:14px;
+    background:#fff;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+textarea{
+    resize:none;
+    min-height:90px;
+}
+
+/* FOOTER BUTTON */
+.footer-btn{
+    border-top:1px solid #eee;
+    padding:25px 30px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.btn{
+    border:none;
+    border-radius:10px;
+    padding:14px 30px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.btn-back{
+    background:#efebe5;
+    color:#555;
+}
+
+.btn-next{
+    background:#f0a318;
+    color:white;
+}
+
+.btn-next:hover{
+    background:#de9400;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+.form-row{
+    grid-template-columns:1fr;
+}
+
+.step p{
+    display:none;
+}
+
+.detail-header{
+    flex-direction:column;
+    gap:15px;
+    align-items:flex-start;
+}
+
+.footer-btn{
+    flex-direction:column;
+    gap:10px;
+}
+
+.btn{
+    width:100%;
+}
+}
+.summary-box{
+    margin-top:20px;
+    border:1px solid #e8e2d8;
+    background:#faf8f5;
+    border-radius:12px;
+    padding:20px;
+}
+
+.summary-box h4{
+    color:#999;
+    font-size:12px;
+    margin-bottom:15px;
+    text-transform:uppercase;
+}
+
+.summary-row{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+}
+
+.summary-row:last-child{
+    margin-bottom:0;
+}
+
+.summary-row span{
+    color:#777;
+}
+
+.summary-row strong{
+    color:#333;
+}
+.step.done span{
+    background:#f0a318;
+    color:#fff;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="detail-header">
+
+        <div class="header-left">
+
+            <a href="admin_pengajuan.php" class="back-btn">‹</a>
+
+            <div class="title-area">
+                <h2>Detail Pengajuan</h2>
+                <p>JMV-4921 - CV Maju Bersama</p>
+            </div>
+
+        </div>
+
+        <div class="status-badge">
+            ● Menunggu
+        </div>
+
+    </div>
+
+    <!-- STEPPER -->
+<div class="stepper">
+
+    <div class="step done">
+        <span>✓</span>
+        <p>Perusahaan</p>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step active">
+        <span>2</span>
+        <p>Pengguna</p>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step">
+        <span>3</span>
+        <p>Produk</p>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step">
+        <span>4</span>
+        <p>Dokumen</p>
+    </div>
+
+</div>
+
+    <!-- FORM -->
+<div class="content">
+
+    <div class="section-title">
+        IDENTITAS PENGGUNA
+    </div>
+
+    <div class="form-row">
+
+        <div class="form-group">
+            <label>Nama Lengkap <span>*</span></label>
+            <input type="text" value="Budi Santoso" readonly>
+        </div>
+
+        <div class="form-group">
+            <label>Jabatan <span>*</span></label>
+            <input type="text" value="Owner" readonly>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label>No. Telepon/WA <span>*</span></label>
+        <input type="text" value="0812-3456-7890" readonly>
+    </div>
+
+    <div class="form-group">
+        <label>Bisnis Email <span>*</span></label>
+        <input type="email" value="budi@majubersama.com" readonly>
+    </div>
+
+    <div class="form-group">
+        <label>Website / Sosial Media</label>
+        <input type="text" value="instagram.com/majubersama.id" readonly>
+    </div>
+
+    <!-- RINGKASAN -->
+    <div class="summary-box">
+
+        <h4>RINGKASAN IDENTITAS PERUSAHAAN</h4>
+
+        <div class="summary-row">
+            <span>Perusahaan</span>
+            <strong>CV Maju Bersama</strong>
+        </div>
+
+        <div class="summary-row">
+            <span>Kota</span>
+            <strong>Jember, Jawa Timur</strong>
+        </div>
+
+        <div class="summary-row">
+            <span>NPWP</span>
+            <strong>12.345.678.9-001</strong>
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- BUTTON -->
+    <div class="footer-btn">
+
+        <button class="btn btn-back" onclick="window.location.href='detail_pengajuan.php'">
+            Kembali
+        </button>
+
+        <button class="btn btn-next" onclick="window.location.href='produk-admin.html'">
+            Selanjutnya ›
+        </button>
+
+    </div>
+
+</div>
+
+</body>
+</html>
